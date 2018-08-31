@@ -1,0 +1,36 @@
+{
+  "http_config": {
+    "port": 8080
+  },
+  "api_endpoints": [
+    {
+      "http_method": "GET",
+      "uri": "/api/v0/hello_world",
+      "handler_func_impl_class": "com.github.rkbalgi.apps.microsrvc.scaffold.handlers.GreetingHandlerFunction",
+      "metering_config": {
+        "enabled": true,
+        "request_props": [
+          "client_id"
+        ],
+        "response_props": [
+          "greeting_msg"
+        ]
+      }
+    },
+    {
+      "http_method": "GET",
+      "uri": "/api/v0/add_two_numbers",
+      "handler_func_impl_class": "com.github.rkbalgi.apps.microsrvc.scaffold.handlers.AddHandlerFunction",
+      "metering_config": {
+        "enabled": true,
+        "request_props": [
+          "a",
+          "b"
+        ],
+        "response_props": [
+          "sum"
+        ]
+      }
+    }
+  ]
+}
